@@ -1,0 +1,106 @@
+/* Import statements and other styles remain unchanged */
+/* Adjustments for the container and its children */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+  flex: 1;
+}
+.details {
+  flex: 0 0 250px;
+  padding: 20px;
+  background-color: #ffffff;
+  display: none;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+  flex-shrink: 0;
+  align-items: center;
+}
+.search-conversations {
+  flex: 0 0 250px;/* Fixed width for search-conversations and details */
+  background-color: #ffffff;/* Default background color for search-conversations and details */
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px;
+  margin-top: 20px;
+}
+.content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+.main {
+  flex: 1;
+  padding: 20px;
+  background-color: #f1f2f4;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: auto;
+}
+.hidden {
+  display: none;
+}
+.search-form {
+  margin-left: 10px;
+  position: relative;
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+.search-form input[type="text"] {
+  padding: 10px 30px 8px 40px;
+  background-color: #f2f2f2;
+  width: 230px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+}
+.search-form .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #888;
+}
+.search-options {
+  display: flex;
+  flex-wrap: wrap;/* Allow wrapping of buttons */
+  justify-content: center;/* Center-align buttons */
+  display: none;
+}
+.search-option {
+  padding: 6px 10px;/* Decrease padding to make the buttons smaller */
+  font-size: 12px;/* Decrease font size to make the text smaller */
+  border: none;
+  background-color: #f1f2f4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;/* Add transition for smooth hover effect */
+  border-radius: 4px;/* Add border radius to buttons */
+  margin: 4px;/* Add margin to create space between buttons */
+  font-weight: bold;/* Make the text bold */
+}
+.search-option.active {
+  background-color: #0270de;/* Blue background for selected option */
+  color: #fff;/* White text for selected option */
+  font-weight: bold;/* Bold text for selected option */
+}
+.search-form.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 230px;
+  height: 2px;
+  background-color: #0270de;/* Blue line at the bottom of input */
+}
+/* Apply hover effect only to unselected options */
+.search-option:not(.active):hover {
+  background-color: #e5e5e5;/* Grey background on hover for unselected options */
+}
+/*# sourceMappingURL=Rainbow.css.map */

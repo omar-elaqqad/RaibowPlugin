@@ -1,0 +1,89 @@
+@import "../../../css/jalios/core/init-mixins.less";
+@import "../../../css/jalios/core/app/jalios-app-variables.less";
+
+// Hook for JCMS
+@import "../../../css/plugin.less";
+
+/* Rainbow Loading Page Styles */
+
+/* Rainbow Loading Page Styles */
+@progress-bar-color: #3399ff; // Define a color variable
+
+
+.rainbow-loading-container {
+  position: fixed; /* Ensures full viewport coverage */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Fill viewport width */
+  height: 100vh; /* Fill viewport height */
+  background-color: #f5f5f5; /* Light gray background */
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+}
+
+.background-image-container {
+  position: fixed; /* Ensures full viewport coverage */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Fill viewport width */
+  height: 100vh; /* Fill viewport height */
+  background-color: #f5f5f5; /* Light gray background */
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+}
+
+.background-image-container img {
+  width: 100%; /* Ensure background image fills container */
+  height: 100%; /* Ensure background image fills container */
+  object-fit: cover; /* Scale image to cover the entire container */
+}
+
+@border-radius: 5px;
+
+// Container for the logo with a white background and border-radius
+.logo-container {
+  background-color: white;
+  border-radius: @border-radius;
+  width: 150px; // Adjust width as needed
+  height: auto; // Adjust height as needed to match the image
+}
+
+.rainbow-logo {
+  position: absolute; /* Position logo on top of the background */
+  top: 50%; /* Center logo vertically */
+  left: 50%; /* Center logo horizontally */
+  transform: translate(-50%, -50%); /* Center logo using transform */
+  width: 150px; /* Adjust logo width as needed */
+  height: auto; /* Maintain logo aspect ratio */
+}
+
+.alcatel-logo {
+  position: absolute; /* Position company name on top of the background */
+  bottom: 1px; /* Place company name at the bottom */
+  right: 10px; /* Place company name at the right */
+  //transform: translate(-50%, -50%); /* Center logo using transform */
+  width: 300px; /* Adjust logo width as needed */
+  height: auto; /* Maintain logo aspect ratio */
+}
+
+.progress-bar-container {
+    width: 100%; /* Full width of the parent container */
+    height: 18px; /* Adjust height as needed */
+    background-color: #f3f3f3; /* Light grey background */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Hide the overflow of the progress bar */
+}
+
+.progress-bar {
+    height: 20px; /* Adjust height as needed */
+    background-color: @progress-bar-color; /* Green background */
+    text-align: center;
+    line-height: 20px; /* Center text vertically */
+    color: white;
+    position: fixed; /* Fixed position at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+

@@ -1,0 +1,97 @@
+@import "../../../css/jalios/core/init-mixins.less";
+@import "../../../css/jalios/core/app/jalios-app-variables.less";
+
+// Hook for JCMS
+@import "../../../css/plugin.less";
+
+@sidebar-text-color: #fff;
+@sidebar-padding: 20px;
+@sidebar-icon-size: 45px;
+@profile-icon-hover-bg: rgba(203, 210, 217, 0.5); // Transparent hover effect for the profile icon
+@tooltip-bg-color: #000;
+@tooltip-text-color: #fff;
+@tooltip-padding: 5px;
+
+// Define colors and other variables if needed
+@sidebar-bg-color: #1f68d6;
+
+// Sidebar styles
+.sidebar {
+    width: 50px; /* Increased width for better visibility */
+    background-color: @sidebar-bg-color;
+    color: @sidebar-text-color;
+    padding: @sidebar-padding;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+
+    left: 0;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    padding: 32px 12px;
+}
+
+.sidebar-icon {
+    
+    cursor: pointer;
+    position: relative;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+// Profile icon styles
+.profile-icon {
+    cursor: pointer;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.profile-icon:hover::before {
+    content: "";
+    position: absolute;
+    top: -5px; /* Adjust as needed for desired size */
+    left: -5px; /* Adjust as needed for desired size */
+    width: calc(100% + 10px); /* Adjust as needed for desired size */
+    height: calc(100% + 10px); /* Adjust as needed for desired size */
+    background-color: @profile-icon-hover-bg;
+    z-index: -1; /* Ensure it's behind the icon */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+}
+
+
+
+
+// Hover effect for sidebar icons
+.sidebar-icon:hover {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+// Tooltip styles
+.tooltip {
+    display: none;
+    position: absolute;
+    right: calc(100%);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: @tooltip-bg-color;
+    color: @tooltip-text-color;
+    padding: @tooltip-padding;
+    border-radius: 5px;
+    z-index: 3;
+}

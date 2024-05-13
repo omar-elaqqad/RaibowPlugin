@@ -1,0 +1,48 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link rel="stylesheet" href="../../css/sidebar.css">
+</head>
+
+<%
+jcmsContext.addCSSHeader("css/jalios/core/components/sidebar/jalios-sidebar.css");
+jcmsContext.addJavaScript("js/jalios/core/components/jalios-sidebar.js");
+%>
+<div class="sidebar">
+
+    <div class="profile-icon" title="Profile"> <!-- Added profile-icon class here -->
+        <i class="far fa-circle fa-lg" style="color: #4380dd;"></i>
+        <div class="tooltip">Profile</div>
+    </div>
+        
+    <div class="sidebar-icon" title="Channels">
+        <i class="fas fa-stream fa-lg" STY></i>
+        <div class="tooltip">Channels</div>
+    </div>
+
+    <div class="sidebar-icon" title="Bubbles">
+        <i class="fas fa-comments fa-lg"></i>
+        <div class="tooltip">Bubbles</div>
+    </div>
+
+    <div class="sidebar-icon" title="Contacts">
+        <i class="fas fa-address-book fa-lg"></i>
+        <div class="tooltip">Contacts</div>
+    </div>
+
+    <div class="sidebar-icon" title="Calls">
+        <i class="fas fa-phone-alt fa-lg"></i>
+        <div class="tooltip">Calls</div>
+    </div>
+
+    <div class="sidebar-icon" title="Files">
+        <i class="fas fa-file-alt fa-lg"></i>
+        <div class="tooltip">Files</div>
+    </div>
+
+    <div class="sidebar-icon" title="Tasks">
+        <i class="fas fa-tasks fa-lg"></i>
+        <div class="tooltip">Tasks</div>
+    </div>
+</div>
+

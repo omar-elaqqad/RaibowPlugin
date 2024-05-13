@@ -1,0 +1,29 @@
+
+<script type="text/javascript" src="../../js/filterSearch.js">
+
+</script>
+<div class="search-conversations">
+	<div class="search-form">
+		<i class="fas fa-search search-icon"></i> <input type="text"
+			id="searchInput" placeholder="People, bubbles...">
+
+	</div>
+
+	<div class="search-options">
+		<button class="search-option active" data-option="people">People</button>
+		<button class="search-option" data-option="bubbles">Bubbles</button>
+		<button class="search-option" data-option="text">Text</button>
+		<button class="search-option" data-option="channels">Channels</button>
+		<button class="search-option" data-option="companies">Companies</button>
+	</div>
+
+	<div class="recent-conversations">
+        <div class="dropdown-header" id="recentConversationsHeader">
+            <i class="fas fa-chevron-right"></i> 
+            <span id="toggleRecentBtn"
+                class="toggle-button">RECENT CONVERSATIONS</span>
+        </div>
+        <div class="flipper-flesh" id="recentConversationsList"></div>
+    </div>
+	
+</div>

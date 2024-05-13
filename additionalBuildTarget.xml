@@ -1,0 +1,36 @@
+<project basedir=".">
+  <target name="pluginBeforeTomcatStartHook">
+    <copy todir="${baseJCMS_webapp}"  overwrite="true" encoding="UTF-8" outputencoding="UTF-8">
+       <fileset dir="${pluginSrc}">
+           <include name="**/*.*"/>
+           <exclude name="build.properties"/>
+           <exclude name="additionalBuildTarget.xml"/>
+       </fileset>
+    </copy>
+    <copy todir="${baseJCMS_webapp}"  overwrite="true" encoding="UTF-8" outputencoding="UTF-8">
+       <fileset dir="${localArtifactDir}">
+           <include name="**/*.ref"/>
+       </fileset>
+    </copy>
+  	<copy file="${localArtifactDir}/WEB-INF/data/custom.prop.ref" tofile="${baseJCMS_webapp}/WEB-INF/data/custom.prop" overwrite="true" encoding="UTF-8" outputencoding="UTF-8"/>
+  	<replaceregexp file="${baseJCMS_webapp}/WEB-INF/data/custom.prop" byline="true" encoding="UTF-8" match="channel.urid:(.*)" replace="channel.urid:jenkins" />
+    <replaceregexp file="${baseJCMS_webapp}/WEB-INF/data/custom.prop" byline="true" encoding="UTF-8" match="channel.jcmsdb:(.*)" replace="channel.jcmsdb:derby" />
+  	<replaceregexp file="${baseJCMS_webapp}/WEB-INF/data/custom.prop" byline="true" encoding="UTF-8" match="ldap.enabled:(.*)" replace="ldap.enabled:false" />
+  	<replaceregexp file="${baseJCMS_webapp}/WEB-INF/data/custom.prop" byline="true" encoding="UTF-8" match="mail.enabled:(.*)" replace="mail.enabled:false" />
+  	<replaceregexp file="${baseJCMS_webapp}/WEB-INF/data/custom.prop" byline="true" encoding="UTF-8" match="http.proxy.enabled:(.*)" replace="http.proxy.enabled:false" />
+  	<replaceregexp file="${baseJCMS_webapp}/WEB-INF/data/custom.prop" byline="true" encoding="UTF-8" match="jsync.enabled:(.*)" replace="jsync.enabled:false" />
+  </target>
+	
+  <target name="pluginBeforeBuildWebappWarHook">
+  	<copy todir="${PluginWebappWarTmpDir}"  overwrite="true" encoding="UTF-8" outputencoding="UTF-8">
+        <fileset dir="${pluginSrc}">
+            <include name="**/*.*"/>
+            <exclude name="build.properties"/>
+            <exclude name="additionalBuildTarget.xml"/>
+        </fileset>
+  	</copy>
+  	<copy file="${localArtifactDir}/WEB-INF/data/custom.prop.ref" tofile="${PluginWebappWarTmpDir}/WEB-INF/data/custom.prop" overwrite="true" encoding="UTF-8" outputencoding="UTF-8"/>
+  	<copy file="${localArtifactDir}/WEB-INF/data/store.xml.ref" tofile="${PluginWebappWarTmpDir}/WEB-INF/data/store.xml" overwrite="true" encoding="UTF-8" outputencoding="UTF-8"/>
+  </target>
+
+</project>

@@ -1,0 +1,216 @@
+@import "../../../css/jalios/core/init-mixins.less";
+@import "../../../css/jalios/core/app/jalios-app-variables.less";
+
+// Hook for JCMS
+@import "../../../css/plugin.less";
+
+//                                                                 
+@container-height: 100vh;
+@search-conversations-bg-color: #fff;
+@main-bg-color: #f2f2f2;
+@details-bg-color: #fff;
+@fixed-width: 250px; // Example fixed width for search-conversations and details
+
+// Container styles
+/* Import statements and other styles remain unchanged */
+
+/* Adjustments for the container and its children */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+    flex: 1; // Allows the content section to grow and fill available space
+}
+.details {
+    flex: 0 0 @fixed-width; // Fixed width for search-conversations and details
+    padding: 20px;
+    background-color: #ffffff; // Default background color for search-conversations and details
+    display: none;
+    flex-direction: column;
+    position: relative;
+    margin-top: 20px;
+    flex-shrink: 0;
+    align-items: center;
+
+}
+
+.search-conversations {
+    
+    flex: 0 0 @fixed-width; /* Fixed width for search-conversations and details */
+    background-color: #ffffff; /* Default background color for search-conversations and details */
+    position: relative;
+    margin-top: 20px;
+    flex-shrink: 0;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+    margin-top: 20px; 
+}
+
+.content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    flex: 1; // Ensures the main section takes up the remaining space
+    padding: 20px;
+    flex: 1;
+    padding: 20px;
+    background-color: #f1f2f4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+
+// search input with the buttons to filter the search 
+.search-form {
+    margin-left: 12px;//Space before the input
+    position: relative;
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px 30px 8px 40px;
+    background-color: #f2f2f2;
+    width: 230px;//Width of the input 
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 8px;
+    outline: none;
+    }
+
+.search-form .search-icon {
+    position: absolute;
+    left: 10px;
+    top:10px;
+    color: #888;
+}
+
+.search-options {
+    margin-top: 8px;//space between the buttons and the input
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of buttons */
+    justify-content: center; /* Center-align buttons */
+    display: none;
+}
+
+.search-option {
+    padding: 6px 10px; /* Decrease padding to make the buttons smaller */
+    font-size: 12px; /* Decrease font size to make the text smaller */
+    border: none;
+    background-color: #f1f2f4;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+    border-radius: 4px; /* Add border radius to buttons */
+    margin: 4px; /* Add margin to create space between buttons */
+    font-weight: bold; /* Make the text bold */
+}
+
+.search-option.active {
+    background-color: #0270de; /* Blue background for selected option */
+    color: #fff; /* White text for selected option */
+    font-weight: bold; /* Bold text for selected option */
+}
+
+.search-form.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 230px;
+    height: 2px;
+    background-color: #0270de; /* Blue line at the bottom of input */
+}
+
+/* Apply hover effect only to unselected options */
+.search-option:not(.active):hover {
+    background-color: #e5e5e5; /* Grey background on hover for unselected options */
+}
+
+/*Recent conversations CSS*/
+.recent-conversations {
+    width: 190px;
+    padding: 6px;
+    margin: 0px 3px; /* Adjust margin for less space */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Add cursor pointer */
+    color: #888; /* Change text color to grey */
+    margin-bottom: 3px; /* Reduce margin bottom */
+    font-family: Arial, sans-serif; /* Change font-family */
+}
+
+.dropdown-header span {
+    margin-left: 2px;
+    width: 200px;
+    font-size: 12px; /* Make text smaller */
+    color: #888; /* Change text color to grey */
+    outline: none; /* Remove the outline */
+}
+
+.dropdown-header i {
+    margin-right: 5px;
+    transition: transform 0.3s;
+    font-size: 10px; /* Adjust the font-size of the icon */
+}
+
+
+.flipper-flesh {
+    margin-top: 3px; /* Reduce margin-top */
+    width: 100px; /* Make the flesh smaller */
+    display: none;
+}
+
+.recent-conversations.expanded .flipper-flesh {
+    display: block; /* Show when expanded */
+}
+
+.recent-conversations.expanded .dropdown-header i {
+    transform: rotate(90deg);
+}
+
+/* Apply hover effect to dropdown header and flipper flesh */
+.dropdown-header:hover > i,
+.flipper-flesh:hover {
+    background-color: #e5e5e5; /* Add grey background on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 3px; /* Add border radius */
+    width: 12px;
+    height: 12px;
+    z-index: 2;
+}
+
+/* Adjust margin-left of span on hover */
+.dropdown-header:hover span {
+    margin-left: 0; /* Set margin-left to 0 on hover */
+}
+
+/* Remove hover effect from span */
+.dropdown-header span:hover {
+    background-color: transparent;
+    cursor: default;
+}
+
+
+
+
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plugin PUBLIC "-//JALIOS//DTD JCMS-PLUGIN 1.7//EN" "http://support.jalios.com/dtd/jcms-plugin-1.7.dtd">
+
+  <plugin name="RainbowPlugin" version="1.0" author="Jalios SA" license="JALIOS" initialize="true" jcms="" order="0" url="" jsync="false" appserver="">
+
+  <label xml:lang="fr">RainbowPlugin</label>
+  <description xml:lang="fr">RainbowPlugin</description>
+
+  <private-files>
+    <directory path="properties" />
+  </private-files>
+  
+  
+<plugincomponents>
+  <datacontroller class="com.jalios.jcmsplugin.openrainbow.RainbowMemberHandler" types="Member" />
+</plugincomponents>
+
+  <public-files>
+    <directory path="js" />
+    <directory path="css" />
+    <directory path="docs" />
+    <directory path="jsp" />
+    <directory path="images" />
+  </public-files> 
+</plugin>
+

@@ -1,0 +1,46 @@
+
+# ----------------------------------------------------------------------
+# Templates {usage = jcmsplugin.plugin.sample}
+# ----------------------------------------------------------------------
+
+# Declaration of a new Usage
+# jcms.resource.default-template.{jcmsplugin.plugin.sample}: custom/jcms/doSampleDisplay.jsp
+
+# Declaration of a new Usage for FullDisplay
+# I18N to cut&past in en.prop / fr.prop
+# ui.editportlet.usage.{jcmsplugin.plugin.sample}: Usage label
+
+# Declaration of a new Usage for Skin
+# I18N to cut&past in en.prop / fr.prop
+# ui.editportlet.usage.skin.{jcmsplugin.plugin.sample}: Usage label for skin
+
+# LESS
+#channel.less.plugins/${pluginName}Plugin/css/plugin.css:    plugins/${pluginName}Plugin/css/plugin.less
+
+# Shortcut icon + url
+shortcut.jcmsplugin.openRainbow.icon: plugins/RainbowPlugin/images/OpenRainbowLogo.png
+shortcut.jcmsplugin.openRainbow.link: plugins/RainbowPlugin/jsp/app/Rainbow.jsp
+
+# LESS
+channel.less.plugins/RainbowPlugin/css/openrainbow.css: plugins/RainbowPlugin/css/Rainbow.less
+channel.less.plugins/RainbowPlugin/css/sidebar.css: plugins/RainbowPlugin/css/sidebar.less
+channel.less.plugins/RainbowPlugin/css/openrainbow.css: plugins/RainbowPlugin/css/Rainbow.less
+channel.less.plugins/RainbowPlugin/css/load.css: plugins/RainbowPlugin/css/load.less
+
+
+#Custom the redirection url Pattern 
+#channel.security.authorized-redirect.redirect :^(https?:)?//sandbox\.openrainbow\.com(/[a-zA-Z0-9\.\?\=\-\_\s]*)?$
+
+#channel.security.Validator.JCMSRedirectURL=^(https?:)?//sandbox\.openrainbow\.com/api/rainbow/authentication/v1\.0/oauth/authorize\?response_type=token&client_id=[a-zA-Z0-9]+&redirect_uri=http[s]?://localhost:[0-9]+/jcms/plugins/OpenRainbowPlugin/jsp/app/Rainbow\.jsp/&scope=all$
+
+#Add the token in the extra data of the Member
+extra.Member.jcmsplugin.rainbow.tokenRainbow.hidden:
+
+#add the App ID ,Secret AppID and redirect_uri to the properties of the plugin
+jcmsplugin.rainbowPlugin.APPLICATIONID:
+jcmsplugin.rainbowPlugin.APPLICATIONSECRET:
+jcmsplugin.rainbowPlugin.OAuthRedirect:
+
+#Icons used in rainbow
+icon.Rainbow-Profile-icon: plugins/RainbowPlugin/images/rainbow/icons/icon-circle.png
+icon.Rainbow-tasks-icon: plugins/RainbowPlugin/images/rainbow/icons/icon-tasks.png

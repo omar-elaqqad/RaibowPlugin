@@ -1,0 +1,67 @@
+.sidebar {
+  width: 50px;/* Increased width for better visibility */
+  background-color: #1f68d6;
+  color: #fff;
+  padding: 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  left: 0;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  bottom: 0;
+  padding: 32px 12px;
+}
+.sidebar-icon {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+.profile-icon {
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.profile-icon:hover::before {
+  content: "";
+  position: absolute;
+  top: -5px;/* Adjust as needed for desired size */
+  left: -5px;/* Adjust as needed for desired size */
+  width: calc(110%);/* Adjust as needed for desired size */
+  height: calc(110%);/* Adjust as needed for desired size */
+  background-color: rgba(203, 210, 217, 0.5);
+  z-index: -1;/* Ensure it's behind the icon */
+  border-radius: 5px;/* Add border-radius for rounded corners */
+}
+.sidebar-icon:hover {
+  background-color: transparent;
+  border-radius: 5px;
+}
+.tooltip {
+  display: none;
+  position: absolute;
+  right: calc(100%);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 3;
+}
+/*# sourceMappingURL=sidebar.css.map */
